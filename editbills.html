@@ -1,0 +1,81 @@
+<html>
+        <head>
+                <title>Electricity Bill Management System</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+                <style>
+                body {
+                  background-color: #212A3E;
+                  color: aliceblue;
+                }
+                header {
+                  background-color: #212A3E;
+                  color: #F1F6F9;
+                }
+                .nav-link{
+                  color: #9BA4B5;
+                }
+                footer {
+                  background-color: #212A3E;
+                  color: #9BA4B5;
+                }
+                #viewtable{
+                  color: #F1F6F9;
+                }
+              </style>
+        </head>
+        <body class="d-flex flex-column h-100 container">
+                <header>
+                  <table>
+                        <tr>
+                          <td><img src="digitals.png" alt="logo"width="100px" height="100px"></td>
+                          <td><h1 style="font-family: Roboto,sans;">Electricity Bill Management System</h1></td>
+                        </tr>
+                      </table>
+                        <nav class="navbar navbar-expand-lg navbar-expand-sm ">
+                          <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                  <div class="navbar-nav">
+                                        <a class="nav-link" href="index.html">Listing</a>
+                                        <a class="nav-link active" aria-current="page" href="addbills.html">Add New</a>
+                                  </div>
+                                </div>
+                          </div>
+                        </nav>
+                </header>
+		<h3>Edit Document</h3>
+                <form onsubmit="return false;">
+                 <div class="mb-3">
+                        <label for="id" class="form-label">id</label>
+                        <input type="text" class="form-control" id="id" autofocus>
+                  </div>
+                 <div class="mb-3">
+                        <label for="customer_id" class="form-label">customer_id</label>
+                        <input type="text" class="form-control" id="customer_id" autofocus>
+                  </div>
+                  <div class="mb-3">
+                        <label for="amount" class="form-label">amount</label>
+                        <input type="text" class="form-control" id="amount">
+                  </div>
+                  <div class="mb-3">
+                        <label for="due_date" class="form-label">due_date</label>
+                        <input type="text" class="form-control" id="due_date">
+                  </div>
+
+                  <button class="btn btn-primary" onclick="return billsData()">Update</button>
+                  <a href="index.html" class="btn btn-primary">Cancel</a>
+                </form>
+
+                <footer class="footer mt-auto py-3 ">
+                  <div class="container text-center">
+                        <span class="text-muted"> &copy;Electricity Bill Management System</span>
+                  </div>
+                </footer>
+        </body>
+	 <script src="script.js"></script>
+        <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                const id = urlParams.get('id');
+                billsByID(id); 
+        </script>
+</html>
